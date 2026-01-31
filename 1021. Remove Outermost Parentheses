@@ -1,0 +1,18 @@
+class Solution {
+public:
+    string removeOuterParentheses(string s) {
+      string final = "";
+      int deapth = 0;
+      for (char ch : s){
+        if (ch == '(' ){
+            if(deapth > 0) final.push_back(ch);
+            deapth ++;
+         }
+         else if(ch == ')'){
+            deapth --;
+            if(deapth > 0) final.push_back(ch);
+         }
+      }
+      return final;
+    }
+};
