@@ -1,0 +1,13 @@
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+        // Length must match
+        if (s.size() != goal.size()) return false;
+
+        // Combine string with itself
+        string doubled = s + s;
+
+        // Check if goal is a substring
+        return doubled.find(goal) != string::npos;
+    }
+};
